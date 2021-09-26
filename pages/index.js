@@ -1,82 +1,74 @@
+import React from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import Avatar from '../components/Avatar'
+import {ViewGridIcon} from '@heroicons/react/solid'
+import ViewGrid from '../components/icons/ViewGrid'
+import SearchComponent from '../components/SearchComponent'
+import FooterCustom from '../components/FooterCustom'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center h-screen">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Guugle</title>
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
+      {/* Header */}
+   <header className="flex w-full p-5 justify-between text-sm text-gray-700">
+     {/* Left */}
+     <div className="flex space-x-4 items-center">
+        <p className="link">About</p>
+        <p className="link">Store</p>
+        <ViewGridIcon/>
+     </div>
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
+    {/* Right */}
+    <div className="flex space-x-4 items-center">
+        <p className="link">Gmail</p>
+        <p className="link">Images</p>
+        
+        {/* Icon */}
+        <ViewGrid />
 
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
+        {/* Avatar */}
+        <Avatar url="https://randomuser.me/api/portraits/men/34.jpg"/>
+    </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
+   </header>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+
+      {/* Body */}
+        <form className="flex flex-col items-center mt-16 flex-grow w-4/5">
+          <Image
+          src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+          height={100}
+          width={300}
+          //!
+          // src="https://www.google.com.mx/logos/doodles/2021/christopher-reeves-69th-birthday-6753651837109086-l.webp"
+          // height={200}
+          // width={500}
+          />
+          <SearchComponent/>
+          <div className="flex flex-col w-1/2 space-y-2 justify-center mt-8 sm:space-y-0 sm:flex-row sm:space-x-4">
+          <button className="btn-goog">Buscar con Google</button>
+          <button className="btn-goog">Me siento con suerte</button>
         </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
+        <p className="text-sm mt-16">Ofrecido por Google en:
+        <Link href="/about">
+        <a className="text-blue-500"> English</a>
+        </Link>
+        </p>
+        </form>
+       
+      {/* Footer */}
+      <FooterCustom />
     </div>
   )
-}
+
+} 
+
