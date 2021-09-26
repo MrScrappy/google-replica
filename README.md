@@ -12,7 +12,7 @@ Una replica hecha con React, Next.js y Tailwind CSS
 
 ## License
 
-MIT
+[MIT](https://github.com/MrScrappy/google-replica/blob/main/LICENSE)
 
 
 
